@@ -5,8 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js-biglietto-treno-form</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-danger">
+
+    <div class="container text-center ">
+        <h3 class="text-uppercase text-white ">calcola il prezzo del biglietto</h3>
+        <div class="row justify-content-center ">
+            <div class="col-3">
+                <label class="mb-5" for="wished-km">Km you wish to cover</label>
+              <input type="number" id="wished-km" placeholder="Type km">  
+            </div>
+            <div class="col-3">
+                <label class="mb-5" for="user-age">how old are you</label>
+                <input type="number" id="user-age" placeholder="type your age">
+            </div>
+            <div class="col-3">
+                <label class="mb-5" for="">nothing yet</label>
+                <input type="number" id="">
+            </div>
+            <div class="col-12 text-center ">
+                <button class="btn btn-outline-danger bg-body-secondary fw-bold mt-5">Click me baby</button>
+            </div>
+            <div class="col-12 text-center">
+                <div class="ticket mt-5 ">
+                   <div id="total-price"></div> 
+                </div>
+            </div>
+        </div>
+    </div>
     
 
     <script src="./assets/js/main.js"></script>
