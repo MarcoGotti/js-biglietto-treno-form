@@ -16,42 +16,98 @@ Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente
 const buttonElement = document.querySelector('button');
 buttonElement.addEventListener('click', function(){
 
-    //chiedi Name e Surname
+    //chiedi dati
     const name = document.getElementById('Name').value;
     const surname = document.getElementById('Surname').value;
     const fullname = (name + ' ' + surname);
 
-    //chiedi i km
-    const km = parseInt(document.getElementById('wished-km').value);
+    const km = document.getElementById('wished-km').value;
 
-    //chiedi età passeggero
-    const age = parseInt(document.getElementById('user-age').value);
+    const age = document.getElementById('user-age').value;
 
-    //prezzo full
+    //calcola prezzo full
     const price_full = (km * 0.21);
     let price = (price_full);
 
     //fai apparire ticket
-    const ticketElement = document.querySelector('.your-ticket');
+    /* const ticketElement = document.querySelector('.your-ticket');
     console.log(ticketElement);
-    ticketElement.classList.remove('d-none')
+    ticketElement.classList.remove('d-none') */
 
     //calcola prezzo secondo età
-    if (age < 18) {
-        //se minorenne 20% sconto
+ if ((name.length < 1) || (surname.length < 1) || (km.length < 1) || (age.length < 1)/* || (surname = '') || (km = '') || (age = '') */) {
+        //alert
+        alert('You must fill every space');
+
+    }else if (age < 18) {
+        //calcola prezzo e stampa ticket-type
         price = (price_full * 0.8);
         document.getElementById('priceType').innerText = ('Discount Under-18');
+        //stampa biglietto con i dati
+        const ticketElement = document.querySelector('.your-ticket');
+        console.log(ticketElement);
+        ticketElement.classList.remove('d-none')
+        console.log(fullname);
+        document.getElementById('passenger').innerText = (fullname);
+    
+        console.log(price);
+        const priceElement = document.getElementById('total-price');
+        priceElement.innerHTML = (`${price.toFixed(2)} €`);
+
+        document.getElementById('wagon').innerText = (Math.floor(Math.random() * 10) +1);
+
+        document.getElementById('cp-code').innerHTML = getRndInteger(11111,98766)
+        function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min) ) + min;
+        }
+
     } else if (age >= 65) {
-        //se over 65 40% sconto
+        //calcola prezzo e stampa ticket-type
         price = (price_full * 0.6)
         document.getElementById('priceType').innerText = ('Reduced over-65');
+        //stampa biglietto
+        const ticketElement = document.querySelector('.your-ticket');
+        console.log(ticketElement);
+        ticketElement.classList.remove('d-none')
+        console.log(fullname);
+        document.getElementById('passenger').innerText = (fullname);
+    
+        console.log(price);
+        const priceElement = document.getElementById('total-price');
+        priceElement.innerHTML = (`${price.toFixed(2)} €`);
+
+        document.getElementById('wagon').innerText = (Math.floor(Math.random() * 10) +1);
+
+        document.getElementById('cp-code').innerHTML = getRndInteger(11111,98766)
+        function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min) ) + min;
+        }
+
     } else {
-        //altrimenti prezzo pieno
+        //calcola prezzo e stampa ticket-type
         price = (price_full)
         document.getElementById('priceType').innerText = ('Standard');
+        //stampa biglietto
+        const ticketElement = document.querySelector('.your-ticket');
+        console.log(ticketElement);
+        ticketElement.classList.remove('d-none')
+        console.log(fullname);
+        document.getElementById('passenger').innerText = (fullname);
+    
+        console.log(price);
+        const priceElement = document.getElementById('total-price');
+        priceElement.innerHTML = (`${price.toFixed(2)} €`);
+
+        document.getElementById('wagon').innerText = (Math.floor(Math.random() * 10) +1);
+
+        document.getElementById('cp-code').innerHTML = getRndInteger(11111,98766)
+        function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min) ) + min;
+        }
+
     }
     
-    //stampa nome e cognome
+   /*  //stampa nome e cognome
     console.log(fullname);
     document.getElementById('passenger').innerText = (fullname);
     
@@ -67,7 +123,7 @@ buttonElement.addEventListener('click', function(){
     document.getElementById('cp-code').innerHTML = getRndInteger(11111,98766)
     function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min) ) + min;
-      }
+      } */
 
     });
 
