@@ -12,9 +12,9 @@ Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente
 */
 
 
-//click
-const buttonElement = document.querySelector('button');
-buttonElement.addEventListener('click', function(){
+//click to generate
+const buttonGenerate = document.getElementById('generate-btn');
+buttonGenerate.addEventListener('click', function(){
 
     //chiedi dati
     const name = document.getElementById('Name').value;
@@ -26,19 +26,17 @@ buttonElement.addEventListener('click', function(){
     const age = document.getElementById('user-age').value;
 
     //calcola prezzo full
-    const price_full = (km * 0.21);
-    let price = (price_full);
+    const price_full = km * 0.21;
+    let price = price_full;
 
-    //fai apparire ticket
-    /* const ticketElement = document.querySelector('.your-ticket');
-    console.log(ticketElement);
-    ticketElement.classList.remove('d-none') */
 
     //calcola prezzo secondo età
  if ((name.length < 1) || (surname.length < 1) || (km.length < 1) || (age.length < 1)/* || (surname = '') || (km = '') || (age = '') */) {
         //alert
+        const ticketElement = document.querySelector('.your-ticket');
+        ticketElement.classList.add('d-none')
         alert('You must fill every space');
-
+        
     }else if (age < 18) {
         //calcola prezzo e stampa ticket-type
         price = (price_full * 0.8);
@@ -104,10 +102,21 @@ buttonElement.addEventListener('click', function(){
         function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min) ) + min;
         }
-
     }
+});
+
+//click to cancel
+document.getElementById('cancel-btn').addEventListener('click', 
+function () {
+    document.getElementById('Name').value = '';
+    document.getElementById('Surname').value = '';
+    document.getElementById('wished-km').value = '';   //??input type:"number"??
+    document.getElementById('user-age').value = '';
     
-   /*  //stampa nome e cognome
+});
+
+
+ /*  //stampa nome e cognome
     console.log(fullname);
     document.getElementById('passenger').innerText = (fullname);
     
@@ -124,8 +133,3 @@ buttonElement.addEventListener('click', function(){
     function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min) ) + min;
       } */
-
-    });
-
-
-
