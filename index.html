@@ -8,36 +8,78 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body class="bg-danger">
-
-    <div class="container text-center ">
-        <h3 class="text-uppercase text-white ">let's find out how much is you ticket
+    <div class="container">
+        <h3 class="text-uppercase text-white text-center fw-bold">calculate your ticket
         </h3>
-        <div class="row justify-content-center ">
+        <div class="d-flex flex-wrap justify-content-center text-center bg-white p-3 rounded-4">
             <div class="col-3">
-                <label class="mb-5" for="wished-km">Km you wish to cover</label>
-                <input type="number" id="wished-km" placeholder="Type km">  
+              <div>
+                <label class="form-label mb-5" for="Name Surname">Passenger</label>  
+              </div>
+              <input type="text" id="Name" placeholder="Name" aria-describedby="NameCompleteHelp">
+              <input type="text" id="Surname" class="mt-1 " placeholder="Surname" aria-describedby="NameCompleteHelp">
+              <div id="NameCompleteHelp" class="form-text ">Type your full name, as it is on your ID</div>
             </div>
             <div class="col-3">
-                <label class="mb-5" for="user-age">how old are you</label>
-                <input type="number" id="user-age" placeholder="type your age">
+                <div>
+                  <label class="form-label mb-5" for="wished-km">Km you wish to cover</label>  
+                </div>
+                <input type="number" id="wished-km" placeholder="kms" aria-describedby="KmsHelp">  
+                <div id="KmsHelp" class="form-text ">If you travel more Kms than you buy, you might encounter a fine</div>
             </div>
             <div class="col-3">
-                <label class="mb-5" for="">nothing yet</label>
-                <input type="number" id="">
+                <div>
+                    <label class="form-label mb-5" for="user-age">Age range</label>  
+                </div>
+                <input type="number" id="user-age" placeholder="Age" aria-describedby="ageHelp">  
+                <div id="ageHelp" class="form-text ">this info will remain secret</div>
+                <!-- <div>
+                    <label class="mb-5" for="user-age">Age range</label>  
+                </div>
+                <select class="form-select form-select-sm w-50 m-auto " id="user-age" aria-label="Default select example" aria-describedby="ageHelp">
+                    <option id="under-18" value="1">Under 18 years-old</option>
+                    <option id="adult" value="2">18 to 64 years-old</option>
+                    <option id="over-65" value="3">over 65 years-old</option>
+                </select>
+                <div id="ageHelp" class="form-text">this info will remain secret</div> -->
             </div>
             <div class="col-12 text-center ">
-                <button id="generate-button" class="btn btn-outline-danger bg-body-secondary fw-bold mt-5">Click me baby</button>
-            </div>
-            <div class="col-12 text-center">
-                <div class="ticket mt-5">
-                    <h3 class="text-uppercase text-white ">your ticket</h3>
-                   <div id="total-price"></div> 
-                </div>
+                <button type="submit" id="generate-button" class="btn btn-outline-danger bg-body-secondary fw-bold mt-5">view</button>
             </div>
         </div>
+        <div class="your-ticket d-none col-12">
+            <h3 class="text-uppercase text-center text-white">your ticket</h3>
+            <div class="bg-white p-3">
+                <div class="d-flex border-end-0 border-secondary-subtle ">
+                   <div class="col-3 bg-dark-subtle p-2">
+                    <h4 class="text-uppercase fw-bold">passenger</h4>
+                    <h5 id="passenger" class="fw-bold">Name Surname</h5>
+                   </div>  
+                   <div class="col-9">
+                    <table class="table table-borderless ">
+                        <thead>
+                          <tr>
+                            <th scope="col">Ticket type</th>
+                            <th scope="col">Wagon</th>
+                            <th scope="col">CP Code</th>
+                            <th scope="col">Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td id="priceType">Standard</td>
+                            <td id="wagon"></td>
+                            <td id="cp-code"></td>
+                            <td id="total-price"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                   </div>                      
+                </div>
+                
+            </div>                  
+        </div>
     </div>
-    
-
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
