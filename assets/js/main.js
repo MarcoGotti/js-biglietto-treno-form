@@ -107,7 +107,7 @@ function () {
     document.getElementById('Name').value = '';
     document.getElementById('Surname').value = '';
     document.getElementById('wished-km').value = '';  
-    document.getElementById('user-age').value = '';
+    document.getElementById('user-age').value = '2';
     
 });
 
