@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>js-biglietto-treno-form</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>js-biglietto-treno-form</title>   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body class="bg-purple">
     <div class="container">
@@ -28,32 +28,32 @@
                 <div id="KmsHelp" class="form-text ">If you travel more Kms than you buy, you might encounter a fine</div>
             </div>
             <div class="col-3">
-                <div>
+                <!-- <div>
                     <label class="form-label mb-5 text-purple fw-bolder fs-5" for="user-age">Age range</label>  
                 </div>
                 <input type="number" id="user-age" placeholder="Age" value="18" min="10" max="100" aria-describedby="ageHelp">  
-                <div id="ageHelp" class="form-text ">this info will remain secret</div>
-                <!-- <div>
+                <div id="ageHelp" class="form-text ">this info will remain secret</div> -->
+                <div>
                     <label class="mb-5" for="user-age">Age range</label>  
                 </div>
                 <select class="form-select form-select-sm w-50 m-auto " id="user-age" aria-label="Default select example" aria-describedby="ageHelp">
-                    <option id="under-18" value="1">Under 18</option>
-                    <option id="adult" value="2">18 to 64 years-old</option>
-                    <option id="over-65" value="3">over 65</option>
-                </select> -->
+                    <option value="1">Under 18</option>
+                    <option value="2">18 to 64 years-old</option>
+                    <option value="3">over 65</option>
+                </select>
                 <div id="ageHelp" class="form-text">this info will remain secret</div>
             </div>
             <div class="col-12 text-center">
-                <button type="submit" id="generate-btn" class="btn btn-outline-danger bg-body-secondary fw-bold mt-5">View</button>
-                <button type="button" id="cancel-btn" class="btn btn-outline-danger bg-body-secondary fw-bold mt-5">Cancel</button>
+                <button type="submit" id="generate-btn" class="btn border-purple text-purple bg-button btn-outline-danger fw-bold mt-5">View</button>
+                <button type="button" id="cancel-btn" class="btn border-purple text-purple bg-button btn-outline-danger fw-bold mt-5">Cancel</button>
             </div>
         </div>
         <!-- ./upper part - insert datas -->
         <div class="your-ticket col-12 mt-4 d-none">
             <h3 class="text-uppercase text-center text-white fw-bold ">your train ticket</h3>
             <div class="bg-white p-3">
-                <div class="d-flex border-secondary-subtle border-end-0">
-                   <div class="col-3 bg-dark-subtle rounded-start-3  p-2">
+                <div class="d-flex border-purple rounded-start-3 border-end-0">
+                   <div class="col-3 bg-button rounded-start-3 p-2">
                     <h4 class="text-uppercase fw-bold">passenger</h4>
                     <h5 id="passenger" class="fw-bold">Name Surname</h5>
                    </div>  
@@ -68,7 +68,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
+                          <tr class="vertical">
                             <td id="priceType">Standard</td>
                             <td id="wagon"></td>
                             <td id="cp-code"></td>
